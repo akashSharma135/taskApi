@@ -117,8 +117,8 @@ def all_tasks():
             "task_assigned_by": db.managers.find_one({"id": task.get('manager_id')}).get('name')
         })
 
-        if len(task_list) < 1:
-            return jsonify(msg="No tasks to show")
+    if len(task_list) < 1:
+        return jsonify(msg="No tasks to show")
 
     return jsonify(task_list)
 
@@ -144,8 +144,8 @@ def view_tasks():
             "task_assigned_by": db.managers.find_one({"id": task.get('manager_id')}).get('name')
         })
 
-        if len(task_list) < 1:
-            return jsonify(msg="You have not assigned any task.")
+    if len(task_list) < 1:
+        return jsonify(msg="You have not assigned any task.")
 
     return jsonify(task_list)
 
